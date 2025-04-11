@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+</head>
+<body>
+    <div id="task-list">
+        <h1>To Do List</h1>
+        <ul id="tasks-container"></ul>
+        <button id="add-task-btn" onclick="showAddTaskForm()"><i class="fa-solid fa-plus"></i></button>
+    </div>
+
+    <div id="completed-task-list">
+        <h3>Completed Tasks</h3>
+        <div id="completed-tasks-container"></div>
+    </div>
+
+<!-- add task -->
+    <div id="add-task-form" class="hidden">
+        <input type="text" id="add-task-name" placeholder="Task Name" required/>
+        <input type="date" id="add-task-deadline" required/>
+        <select id="add-task-recurrence" required>
+            <option value="one-time">One-Time</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <button onclick="addTask()">Add Task</button>
+        <button onclick="hideAddTaskForm()">Cancel</button>
+    </div> 
+
+<!-- edit task -->
+    <div id="edit-task-form" class="hidden">
+        <input type="text" id="edit-task-name" placeholder="Task Name" required/>
+        <input type="date" id="edit-task-deadline" required/>
+        <select id="edit-task-recurrence" required>
+            <option value="one-time">One-Time</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+        </select>
+        <button onclick="editTask()">Update Task</button>
+        <button onclick="hideEditTaskForm()">Cancel</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

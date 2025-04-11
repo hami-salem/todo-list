@@ -1,0 +1,228 @@
+:root {
+    --text-color: #EDE8EA;
+    --background-color: #503530;
+    --pink-color: #EFAA9C;
+    --violet-color: #AA8BB7;
+    --blue-color: #a0bcff;
+    --green-color: #8db78b;
+  }
+
+body {
+    margin: 20px auto;
+    font-family: 'Lato';
+    background:var(--background-color);
+    color:var(--text-color);
+    padding: 2.5rem;
+  }
+  
+*{
+    margin:0;
+    padding:0;
+  }
+
+h1 {
+    font-weight: bold;
+    font-size: 5rem;
+    font-family: 'Homemade Apple';
+    text-align: center;
+    margin-top: -2.5rem;
+}
+  
+h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+h3 {
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Homemade Apple';
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+  
+p {
+    font-family: 'Reenie Beanie';
+    font-size: 2rem;
+  }
+
+.completed {
+    font-family: 'Reenie Beanie';
+    font-size: 1.5rem;
+    text-align: center;
+    color: #aa8b87;
+}
+  
+ul,li{
+    list-style:none;
+  }
+  
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+ul li a{
+    text-decoration:none;
+    color:var(--text-color);
+    background:var(--blue-color);
+    display:block;
+    height:10em;
+    width:10em;
+    padding:2em;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transform: rotate(-6deg);
+    transition: transform .15s linear;
+    position: relative;
+  }
+  
+ul li{
+    margin:1em;
+  }
+
+ul li:nth-child(even) a{
+    transform:rotate(4deg);
+    position:relative;
+    top:5px;
+    background-color: var(--pink-color);
+  }
+  
+ul li:nth-child(3n) a{
+    transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    background-color: var(--violet-color);
+  }
+
+ul li:nth-child(5n) a{
+    transform:rotate(5deg);
+    position:relative;
+    top:-10px;
+    background-color: var(--green-color);
+  }
+
+  
+ul li a:hover{
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.25);
+    position:relative;
+    z-index:5;
+  }
+
+ul li a.overdue {
+    background-color: rgb(160, 0, 0);
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 10px;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: transform .3s linear;
+}
+
+button:hover {
+    color: var(--background-color);
+}
+
+.check {
+    left: .5rem;
+    top: .5rem;
+    position: absolute;
+}
+
+.edit {
+    right: .5rem;
+    bottom: .5rem;
+    position: absolute;
+}
+
+.delete {
+    right: .5rem;
+    top: .5rem;
+    position: absolute;
+}
+
+.streak {
+    font-family: 'Lato';
+    left: 1rem;
+    bottom: 1rem;
+    position: absolute;
+    font-size: 1rem;
+}
+
+#add-task-btn {
+    right: 2.5rem;
+    bottom: 2.5rem;
+    position: fixed;
+    font-size: 2rem;
+    transition: transform .3s linear;
+    z-index: 4;
+}
+
+#add-task-btn:hover {
+    transform: scale(1.5);
+    color: var(--green-color);
+}
+
+#add-task-form, #edit-task-form {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    padding: 1rem;
+    border-radius: 22px;
+    position: fixed;
+    text-align: center;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 6;
+}
+
+input, select, #add-task-form button, #edit-task-form button {
+    border-color: var(--pink-color);
+    border-width: .2rem;
+    border-style: solid;
+    border-radius: 22px;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    padding: .25rem .5rem;
+    font-size: 1rem;
+    margin: .5rem;
+    text-align: center;
+}
+
+#add-task-form button, #edit-task-form button {
+    background-color: var(--pink-color);
+    padding: .25rem 2rem;
+    color: var(--text-color);
+}
+
+#add-task-form button:hover, #edit-task-form button:hover {
+    border-color: var(--violet-color);
+    background-color: var(--violet-color);
+}
